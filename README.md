@@ -17,6 +17,9 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 3. If you don't already have the ```reshape2``` package installed, install it.
 4. Run the script, ```run_analysis.R``` . This is a single script that does the following:
   1. Merges the training and the test sets to create one data set.
+    1. The three training sets are merged first (column-binding) - subject_train.txt, X_train.txt & y_train.txt
+    2. The three test sets are then merged (column-binding) - subject_test.txt, X_test.txt & y_test.txt
+    3. The above two sets are finally merged (row-binding)
   2. Extracts only the measurements on the mean and standard deviation for each measurement. 
   3. Uses descriptive activity names to name the activities in the data set
   4. Appropriately labels the data set with descriptive variable names. 
