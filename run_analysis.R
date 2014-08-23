@@ -42,6 +42,7 @@ names(dfAllMeanStddev)[1] <- "ActivityName"
 names(dfAllMeanStddev) <- gsub("mean\\(\\)","Mean",names(dfAllMeanStddev))
 names(dfAllMeanStddev) <- gsub("std\\(\\)","StdDev",names(dfAllMeanStddev))
 names(dfAllMeanStddev) <- gsub("meanFreq\\(\\)","MeanFreq",names(dfAllMeanStddev))
+names(dfAllMeanStddev) <- gsub("-","",names(dfAllMeanStddev))
 
 ##Objective #5: Generate a tidy data set with  average of each variable for each activity and each subject. 
 dfTidySet <- melt(dfAllMeanStddev, id.vars=names(dfAllMeanStddev)[1:3], measure.vars=names(dfAllMeanStddev)[4:82])
