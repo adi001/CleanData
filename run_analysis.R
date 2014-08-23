@@ -33,5 +33,17 @@ headersMeanStddev <- grepl("mean|std", dfFeatures[,2])
 headersMeanStddev <- c(TRUE,TRUE,headersMeanStddev)
 dfAllMeanStddev <- dfAll[,headersMeanStddev]
 
+##Objective #3: Use descriptive activity names
+activityLbl <- read.table("UCI HAR Dataset/activity_labels.txt")[,2]
+dfAllMeanStddev <- cbind(activityLbl[dfAllMeanStddev[,2]],dfAllMeanStddev)
+names(dfAllMeanStddev)[1] <- "ActivityName"
 
+##Objective #4: Clean up variable names
+names(dfAllMeanStddev) <- gsub("mean\\(\\)","Mean",names(dfAllMeanStddev))
+names(dfAllMeanStddev) <- gsub("std\\(\\)","StdDev",names(dfAllMeanStddev))
+names(dfAllMeanStddev) <- gsub("meanFreq\\(\\)","MeanFreq",names(dfAllMeanStddev))
 
+##Objective #5: Generate a tidy data set with  average of each variable for each activity and each subject. 
+dfTidySet <- melt(dfAllMeanStddev, id.vars=names(dfAllMeanStddev)[1:3], measure.vars=names(dfAllMeanStddev)[4:82])
+dfTidySet <- dcast(dfTidySet, SubjectID+ActivityID+ActivityName ~ variable, mean)
+write.table(dfTidySet, file="HAR_Tidy.txt", row.names=FALSE)
