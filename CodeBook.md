@@ -94,28 +94,12 @@ Feature Selection
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+tBodyAcc-XYZ, tGravityAcc-XYZ, tBodyAccJerk-XYZ, etc...
 
 The set of variables that were estimated from these signals are: 
 
-Mean: Mean value
-StdDev: Standard deviation
-MeanFreq: Weighted average of the frequency components to obtain a mean frequency
+- Mean: Mean value
+- StdDev: Standard deviation
+- MeanFreq: Weighted average of the frequency components to obtain a mean frequency
 
 **For each variable, the average of each variable for each activity and each subject is calculated.**
