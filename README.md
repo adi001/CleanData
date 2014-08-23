@@ -21,7 +21,7 @@ The main script is ```run_analyis.R``` This is a single script that does the fol
 3. Uses descriptive activity names to name the activities in the data set
   1. The activity names are merged from the label activity_labels.txt against the index of Activity ID
 4. Appropriately labels the data set with descriptive variable names. 
-  1. In the labels, mean(), std() and meanFreq() are replaced with capitalized forms of the word and the parantheses (brackets) are dropped.
+  1. In the labels, mean(), std() and meanFreq() are replaced with capitalized forms of the word and hyphens & parantheses (brackets) are dropped.
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
   1. The data set generated in step #2 is melted based on the following:
     1. IDs: Subject ID, Activity ID & Activity Name
